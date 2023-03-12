@@ -1,0 +1,93 @@
+<div class="imagedefond">
+  <div class="wrapper">
+    <div class="container" id="#container-list">
+      <div class="sub-container">
+        <!-- Budget -->
+        <div class="total-amount-container">
+          <h3>Budget</h3>
+          <p class="hide error" id="budget-error">
+            La valeur ne peut pas être vide ou négative
+          </p>
+          <input
+            type="number"
+            id="total-amount"
+            placeholder="Entrez le montant total"
+          />
+          <button
+            class="submit"
+            id="total-amount-button"
+            onclick="budget.set(event)"
+          >
+            Définir le budget
+          </button>
+        </div>
+        <!-- Expenditure -->
+        <div class="user-amount-container" id="budget-form">
+          <h3>Dépenses</h3>
+          <p class="hide error" id="product-title-error">
+            Les valeurs ne peuvent pas être vides
+          </p>
+          <form>
+            <input type="hidden" class="form-control" name="id-budget" id="id-budget" />
+            <input
+              type="text"
+              class="product-title"
+              id="product-title"
+              placeholder="Entrez le titre du produit"
+            />
+            <input
+              type="number"
+              id="user-amount"
+              placeholder="Entrez le coût du produit"
+            />
+            <button
+              type="submit"
+              class="btn btn-primary"
+              id="check-amount"
+              onclick="budget.save(event)"
+            >
+              Montant de la dépenses
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Output -->
+      <div class="output-container flex-space">
+        <div>
+          <p>Budget total</p>
+          <span id="amount">0</span>
+        </div>
+        <div>
+          <p>Dépenses</p>
+          <span id="expenditure-value">0</span>
+        </div>
+        <div>
+          <p>Solde</p>
+          <span id="balance-amount">0</span>
+        </div>
+      </div>
+    </div>
+    <!-- List -->
+    <div class="list">
+      <h3>Expense List</h3>
+      <div class="list-container" id="list"></div>
+    </div>
+
+    <div class="row mt-4" id="budget-container-list">
+      <div class="col-12">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nom du budjet</th>
+              <th scope="col">Montant</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
